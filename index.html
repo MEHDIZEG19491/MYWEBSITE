@@ -310,7 +310,7 @@
             margin-top: 0;
         }
         .region-card.active .region-details {
-            max-height: 500px;
+            max-height: 1000px; /* Increased from 500px to ensure all content shows */
             margin-top: 1rem;
         }
         .header-logo-badge {
@@ -324,12 +324,22 @@
         }
         .country-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Reduced from 150px to 100px */
+            gap: 8px; /* Reduced from 10px to 8px */
         }
         @media (max-width: 768px) {
             .country-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                grid-template-columns: repeat(2, 1fr); /* Fixed 2 columns for mobile */
+            }
+        }
+        @media (max-width: 480px) {
+            .country-grid {
+                grid-template-columns: repeat(2, 1fr); /* Maintain 2 columns for very small screens */
+                gap: 6px; /* Even smaller gap */
+            }
+            .country-item {
+                font-size: 0.8rem; /* Smaller font for very small screens */
+                padding: 6px; /* Smaller padding */
             }
         }
         .country-item {
@@ -338,6 +348,7 @@
             border-radius: 4px;
             font-size: 0.9rem;
             transition: all 0.3s ease;
+            text-align: center; /* Center text for better mobile display */
         }
         .country-item:hover {
             background: rgba(57, 255, 20, 0.1);
@@ -548,7 +559,7 @@
                         <div class="p-4 bg-navy-dark/50 rounded-lg">
                             <h4 class="font-bold text-white mb-2">Target Markets</h4>
                             <p class="mb-3">Our company currently operates in the following Asian and Middle Eastern markets:</p>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                            <div class="country-grid">
                                 <div class="country-item">Saudi Arabia</div>
                                 <div class="country-item">Qatar</div>
                                 <div class="country-item">UAE</div>
@@ -883,5 +894,5 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'962b3dc6b1682818',t:'MTc1MzEwNjYwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'962b5252a0fbb6d4',t:'MTc1MzEwNzQ0My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
