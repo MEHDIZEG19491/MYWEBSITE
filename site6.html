@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M TRANSPRO - FIFA Licensed Sports Agency</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MTRANSPRO is a FIFA-licensed international sports agency specializing in professional management of football players, coaches, and underage players worldwide.">
+    <meta name="keywords" content="FIFA agent, football agent, sports agency, player representation, football management, soccer agent, football transfer, sports career management">
+    
+    <!-- Arabic Meta Tags -->
+    <meta name="description" lang="ar" content="?? ????? ??? ?? ????? ?????? ????? ????? ?? ?????? ?????? ?? ??????? ?????????? ?????? ??? ????? ????????? ????????? ???????? ?? ???? ????? ??????.">
+    <meta name="keywords" lang="ar" content="???? ????? ???? ??? ???? ????? ??????? ????? ??????? ????? ??? ?????? ???? ??? ???? ???????? ??? ?????? ????? ??????? ????????">
+    
+    <!-- French Meta Tags -->
+    <meta name="description" lang="fr" content="MTRANSPRO est une agence sportive internationale agréée par la FIFA, spécialisée dans la gestion professionnelle des joueurs de football, des entraîneurs et des joueurs mineurs dans le monde entier.">
+    <meta name="keywords" lang="fr" content="agent FIFA, agent de football, agence sportive, représentation de joueurs, gestion de football, agent de soccer, transfert de football, gestion de carrière sportive">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="M TRANSPRO - FIFA Licensed Sports Agency">
+    <meta property="og:description" content="Global career management for sports professionals">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.m-transpro.com">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.m-transpro.com">
+    
+    <!-- Alternate Language Links -->
+    <link rel="alternate" hreflang="en" href="https://www.m-transpro.com/en">
+    <link rel="alternate" hreflang="fr" href="https://www.m-transpro.com/fr">
+    <link rel="alternate" hreflang="ar" href="https://www.m-transpro.com/ar">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#0a192f',
+                        'navy-light': '#112240',
+                        'navy-dark': '#020c1b',
+                        'green-neon': '#39ff14',
+                        'green-light': '#8fffb8',
+                        'blue-accent': '#3b82f6',
+                        'blue-light': '#1e3a8a',
+                        'orange-accent': '#ff7e33',
+                        'red-accent': '#ff3333'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            position: relative;
+        }
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(57, 255, 20, 0.15) 0%, rgba(10, 25, 47, 0) 70%);
+            pointer-events: none;
+        }
+        .hero-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(57, 255, 20, 0.2) 0%, rgba(10, 25, 47, 0) 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .map-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+            z-index: 10;
+        }
+        .map-dot.headquarters {
+            width: 12px;
+            height: 12px;
+            background-color: #39ff14;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.8);
+            animation: pulse 3s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.8);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(57, 255, 20, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(57, 255, 20, 0);
+            }
+        }
+        .service-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: rgba(30, 58, 138, 0.3);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px -5px rgba(57, 255, 20, 0.2);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #39ff14;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .fifa-badge {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            border: 1px solid rgba(57, 255, 20, 0.5);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.7);
+        }
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+        .logo-text span.green {
+            color: #39ff14;
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
+        }
+        .football-field {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400' viewBox='0 0 800 400'%3E%3Crect width='800' height='400' fill='%23020c1b' opacity='0.9'/%3E%3Cpath d='M400 20 L400 380' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.2' stroke-dasharray='5,5'/%3E%3Ccircle cx='400' cy='200' r='60' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.2'/%3E%3Crect x='20' y='140' width='60' height='120' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.2'/%3E%3Crect x='720' y='140' width='60' height='120' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.2'/%3E%3Crect x='20' y='20' width='760' height='360' fill='none' stroke='%233b82f6' stroke-width='2' stroke-opacity='0.2'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            animation: fieldFade 10s infinite alternate;
+        }
+        @keyframes fieldFade {
+            0% {
+                opacity: 0.1;
+            }
+            100% {
+                opacity: 0.2;
+            }
+        }
+        .service-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .service-card.active .service-details {
+            max-height: 200px;
+        }
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        .service-icon {
+            background: linear-gradient(135deg, #39ff14 0%, #8fffb8 100%);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+        }
+        .service-icon svg {
+            filter: drop-shadow(0 0 2px rgba(10, 25, 47, 0.5));
+        }
+        .business-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23020c1b' opacity='0.95'/%3E%3Cpath d='M100,300 L700,300' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1' stroke-dasharray='5,5'/%3E%3Cpath d='M400,100 L400,500' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1' stroke-dasharray='5,5'/%3E%3Ccircle cx='400' cy='300' r='200' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1'/%3E%3Cpath d='M200,200 L600,200 L600,400 L200,400 Z' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1'/%3E%3Cpath d='M300,150 L500,150 L550,250 L550,450 L250,450 L250,250 Z' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1'/%3E%3Cpath d='M350,200 C350,200 400,150 450,200 C500,250 500,350 450,400 C400,450 350,400 350,400 C300,350 300,250 350,200 Z' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+        .office-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23020c1b' opacity='0.95'/%3E%3Cpath d='M100,100 L700,100 L700,500 L100,500 Z' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1'/%3E%3Cpath d='M150,150 L350,150 L350,450 L150,450 Z' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1'/%3E%3Cpath d='M400,150 L650,150 L650,450 L400,450 Z' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1'/%3E%3Cpath d='M200,200 L300,200 L300,250 L200,250 Z' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1'/%3E%3Cpath d='M200,300 L300,300 L300,350 L200,350 Z' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1'/%3E%3Cpath d='M200,400 L300,400 L300,450 L200,450 Z' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1'/%3E%3Cpath d='M450,200 L600,200 L600,400 L450,400 Z' fill='none' stroke='%233b82f6' stroke-width='1' stroke-opacity='0.1'/%3E%3Ctext x='400' y='550' font-family='Arial' font-size='24' fill='%233b82f6' opacity='0.1' text-anchor='middle'%3EMTRANSPRO%3C/text%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+        .privacy-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .privacy-content {
+            background-color: #0a192f;
+            margin: 5% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 8px;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+        }
+        .contact-button {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(10, 25, 47, 0.8);
+            border: 1px solid rgba(57, 255, 20, 0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+            transition: all 0.3s ease;
+        }
+        .contact-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+        }
+        .network-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: rgba(30, 58, 138, 0.3);
+            overflow: hidden;
+        }
+        .network-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(57, 255, 20, 0.2);
+        }
+        .network-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .network-card.active .network-details {
+            max-height: 500px;
+        }
+        .region-flag {
+            width: 24px;
+            height: 16px;
+            margin-right: 6px;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .region-button {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(59, 130, 246, 0.3) 100%);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .region-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(57, 255, 20, 0.2) 0%, rgba(10, 25, 47, 0) 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .region-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(57, 255, 20, 0.3);
+        }
+        .region-button:hover::before {
+            opacity: 1;
+            animation: pulse-glow 2s infinite;
+        }
+        .region-button.active {
+            background: linear-gradient(135deg, rgba(57, 255, 20, 0.2) 0%, rgba(30, 58, 138, 0.7) 100%);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+        }
+        @keyframes pulse-glow {
+            0% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0.2;
+            }
+        }
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        @media (max-width: 768px) {
+            .country-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+        .country-item {
+            padding: 8px;
+            background: rgba(30, 58, 138, 0.2);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .country-item:hover {
+            background: rgba(57, 255, 20, 0.1);
+            transform: translateY(-2px);
+        }
+        .header-logo-badge {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            border: 1px solid rgba(57, 255, 20, 0.5);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header Navigation -->
+    <nav class="bg-navy shadow-md py-4 px-6 md:px-12 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="header-logo-badge text-lg font-bold">
+                    <span class="text-green-neon">M</span> TRANS<span class="text-green-neon">PRO</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-300 hover:text-green-neon font-medium nav-link">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-green-neon font-medium nav-link">About</a>
+                <a href="#services" class="text-gray-300 hover:text-green-neon font-medium nav-link">Services</a>
+                <a href="#network" class="text-gray-300 hover:text-green-neon font-medium nav-link">Network</a>
+                <a href="#contact" class="text-gray-300 hover:text-green-neon font-medium nav-link">Contact Us</a>
+            </div>
+            <button id="menuButton" class="md:hidden text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-navy-dark bg-opacity-95 z-50 hidden">
+        <div class="flex flex-col h-full justify-center items-center">
+            <button id="closeMenu" class="absolute top-6 right-6 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="flex flex-col space-y-6 text-center">
+                <a href="#home" class="text-white text-2xl hover:text-green-neon font-medium">Home</a>
+                <a href="#about" class="text-white text-2xl hover:text-green-neon font-medium">About</a>
+                <a href="#services" class="text-white text-2xl hover:text-green-neon font-medium">Services</a>
+                <a href="#network" class="text-white text-2xl hover:text-green-neon font-medium">Network</a>
+                <a href="#contact" class="text-white text-2xl hover:text-green-neon font-medium">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-24 px-6 md:px-12 relative overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="football-field absolute inset-0"></div>
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="container mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-10 tracking-tight logo-text">
+                <span class="green">M</span> TRANS<span class="green">PRO</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto font-light">GLOBAL CAREER MANAGEMENT FOR SPORTS PROFESSIONALS</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#about" class="bg-blue-accent hover:bg-blue-500 text-white font-bold py-3 px-10 rounded-lg shadow-lg transition duration-300 uppercase tracking-wider">Learn More</a>
+            </div>
+        </div>
+        <!-- Animated elements -->
+        <div class="hidden md:block absolute bottom-0 left-0 w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="opacity-10">
+                <path fill="#3b82f6" fill-opacity="0.2" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,181.3C960,181,1056,203,1152,208C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 md:px-12 bg-navy-dark relative">
+        <div class="business-bg absolute inset-0 opacity-20"></div>
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">WHO WE ARE</h2>
+                <div class="w-24 h-1 bg-green-neon mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full">
+                    <h3 class="text-2xl font-bold mb-6 text-green-neon">Our Mission</h3>
+                    <p class="text-gray-300 mb-4 text-lg">MTRANSPRO is a FIFA-LICENSED international sports agency specializing in the professional management of football players, coaches, and underage (minor) players, in full compliance with the international regulations set by the International Federation of Association Football (FIFA).</p>
+                    <p class="text-gray-300 mb-4 text-lg">We provide comprehensive services in representation, career guidance, and strategic planning, connecting talents with professional opportunities across mature and emerging football markets in Europe, North Africa, and the Middle East.</p>
+                    <p class="text-gray-300 mb-4 text-lg">Our agency brings together a multinational team of legal experts and talent scouts, working collaboratively to protect our clients' interests and guide them toward the most suitable pathways for growth and success.</p>
+                    <p class="text-gray-300 mb-4 text-lg">MTRANSPRO is committed to building long-term partnerships based on trust, integrity, and performance, with a particular focus on supporting minor players through holistic management that respects both legal and developmental needs, in full coordination with their guardians.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Network Section -->
+    <section id="network" class="py-20 px-6 md:px-12 bg-navy relative">
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">MTRANSPRO GLOBAL NETWORK</h2>
+                <div class="w-24 h-1 bg-green-neon mx-auto"></div>
+                <p class="text-gray-300 mt-4 max-w-3xl mx-auto">Strategic expansion plan connecting talents with opportunities across key football markets</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Algeria Button -->
+                <button id="algeriaBtn" class="region-button rounded-lg p-6 text-center h-24 flex items-center justify-center">
+                    <h3 class="text-xl font-bold text-green-neon">ALGERIA</h3>
+                </button>
+                
+                <!-- Africa Button -->
+                <button id="africaBtn" class="region-button rounded-lg p-6 text-center h-24 flex items-center justify-center">
+                    <h3 class="text-xl font-bold text-green-neon">AFRICA</h3>
+                </button>
+                
+                <!-- Europe Button -->
+                <button id="europeBtn" class="region-button rounded-lg p-6 text-center h-24 flex items-center justify-center">
+                    <h3 class="text-xl font-bold text-green-neon">EUROPE</h3>
+                </button>
+                
+                <!-- Asia Button -->
+                <button id="asiaBtn" class="region-button rounded-lg p-6 text-center h-24 flex items-center justify-center">
+                    <h3 class="text-xl font-bold text-green-neon">ASIA & MIDDLE EAST</h3>
+                </button>
+            </div>
+            
+            <!-- Region Details Panels -->
+            <div id="regionDetails" class="mt-8 bg-navy-dark/50 rounded-lg p-6 border border-blue-accent/20 shadow-lg hidden">
+                <!-- Algeria Details -->
+                <div id="algeriaDetails" class="region-content hidden">
+                    <h3 class="text-2xl font-bold text-green-neon mb-4">ALGERIA</h3>
+                    <div class="p-4 bg-navy-dark/50 rounded-lg">
+                        <h4 class="font-bold text-white mb-2">Headquarters</h4>
+                        <p class="mb-3">Our main headquarters is located in Algiers, the capital city of Algeria.</p>
+                        <div class="flex items-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-neon mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Algiers, Algeria</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-neon mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                            </svg>
+                            <span>Main Operations Center</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Africa Details -->
+                <div id="africaDetails" class="region-content hidden">
+                    <h3 class="text-2xl font-bold text-green-neon mb-4">AFRICA</h3>
+                    <div class="p-4 bg-navy-dark/50 rounded-lg">
+                        <h4 class="font-bold text-white mb-2">Current Operations</h4>
+                        <p class="mb-3">Our company currently provides services in the following North African countries:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <div class="region-flag bg-green-800"></div>
+                                <span>Tunisia</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="region-flag bg-red-800"></div>
+                                <span>Egypt</span>
+                            </li>
+                        </ul>
+                        <p class="mt-4 text-sm italic">We are planning to expand our operations to more African countries in the near future.</p>
+                    </div>
+                </div>
+                
+                <!-- Europe Details -->
+                <div id="europeDetails" class="region-content hidden">
+                    <h3 class="text-2xl font-bold text-green-neon mb-4">EUROPE</h3>
+                    <div class="p-4 bg-navy-dark/50 rounded-lg">
+                        <h4 class="font-bold text-white mb-3">European Market</h4>
+                        <p class="mb-4">We operate across all major European football markets, including:</p>
+                        
+                        <div class="country-grid">
+                            <div class="country-item">Albania</div>
+                            <div class="country-item">Andorra</div>
+                            <div class="country-item">Armenia</div>
+                            <div class="country-item">Austria</div>
+                            <div class="country-item">Azerbaijan</div>
+                            <div class="country-item">Belarus</div>
+                            <div class="country-item">Belgium</div>
+                            <div class="country-item">Bosnia and Herzegovina</div>
+                            <div class="country-item">Bulgaria</div>
+                            <div class="country-item">Croatia</div>
+                            <div class="country-item">Cyprus</div>
+                            <div class="country-item">Czech Republic</div>
+                            <div class="country-item">Denmark</div>
+                            <div class="country-item">England</div>
+                            <div class="country-item">Estonia</div>
+                            <div class="country-item">Faroe Islands</div>
+                            <div class="country-item">Finland</div>
+                            <div class="country-item">France</div>
+                            <div class="country-item">Georgia</div>
+                            <div class="country-item">Germany</div>
+                            <div class="country-item">Gibraltar</div>
+                            <div class="country-item">Greece</div>
+                            <div class="country-item">Hungary</div>
+                            <div class="country-item">Iceland</div>
+                            <div class="country-item">Ireland</div>
+                            <div class="country-item">Italy</div>
+                            <div class="country-item">Kazakhstan</div>
+                            <div class="country-item">Kosovo</div>
+                            <div class="country-item">Latvia</div>
+                            <div class="country-item">Lithuania</div>
+                            <div class="country-item">Luxembourg</div>
+                            <div class="country-item">Malta</div>
+                            <div class="country-item">Moldova</div>
+                            <div class="country-item">Montenegro</div>
+                            <div class="country-item">Netherlands</div>
+                            <div class="country-item">North Macedonia</div>
+                            <div class="country-item">Northern Ireland</div>
+                            <div class="country-item">Norway</div>
+                            <div class="country-item">Poland</div>
+                            <div class="country-item">Portugal</div>
+                            <div class="country-item">Romania</div>
+                            <div class="country-item">Russia</div>
+                            <div class="country-item">San Marino</div>
+                            <div class="country-item">Scotland</div>
+                            <div class="country-item">Serbia</div>
+                            <div class="country-item">Slovakia</div>
+                            <div class="country-item">Slovenia</div>
+                            <div class="country-item">Spain</div>
+                            <div class="country-item">Sweden</div>
+                            <div class="country-item">Switzerland</div>
+                            <div class="country-item">Turkey</div>
+                            <div class="country-item">Ukraine</div>
+                            <div class="country-item">Wales</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Asia Details -->
+                <div id="asiaDetails" class="region-content hidden">
+                    <h3 class="text-2xl font-bold text-green-neon mb-4">ASIA & MIDDLE EAST</h3>
+                    <div class="p-4 bg-navy-dark/50 rounded-lg">
+                        <h4 class="font-bold text-white mb-2">Target Markets</h4>
+                        <p class="mb-3">Our company currently operates in the following Asian and Middle Eastern markets:</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                            <div class="country-item">Saudi Arabia</div>
+                            <div class="country-item">Qatar</div>
+                            <div class="country-item">UAE</div>
+                            <div class="country-item">Bahrain</div>
+                            <div class="country-item">Oman</div>
+                            <div class="country-item">Iraq</div>
+                            <div class="country-item">Jordan</div>
+                            <div class="country-item">China</div>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-blue-light/30 rounded-lg">
+                            <h5 class="font-bold text-blue-accent mb-1">Secondary Office - Coming Soon</h5>
+                            <div class="flex items-center">
+                                <div class="region-flag bg-red-600"></div>
+                                <span>Istanbul, Turkey</span>
+                            </div>
+                            <p class="text-sm mt-2 italic">Our secondary office in Istanbul will be announced in the coming weeks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6 md:px-12 bg-navy-dark relative">
+        <div class="office-bg absolute inset-0 opacity-20"></div>
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">WHAT WE DO</h2>
+                <div class="w-24 h-1 bg-green-neon mx-auto mb-6"></div>
+                <p class="text-center text-gray-300 max-w-3xl mx-auto">Comprehensive services tailored to maximize player potential and career opportunities across global markets</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-blue-light/20 rounded-lg p-8 shadow-md border border-opacity-10 border-green-neon hover:border-opacity-50">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3 text-green-neon">Player Scouting & Representation</h3>
+                    <div class="service-details text-gray-300 text-center">
+                        <p>We discover and represent emerging football talents worldwide, connecting them with opportunities that match their skills and career goals.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-blue-light/20 rounded-lg p-8 shadow-md border border-opacity-10 border-green-neon hover:border-opacity-50">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3 text-green-neon">Career Management</h3>
+                    <div class="service-details text-gray-300 text-center">
+                        <p>Strategic planning for each phase of a player's journey, from emerging talent to established professional and post-career transitions.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-blue-light/20 rounded-lg p-8 shadow-md border border-opacity-10 border-green-neon hover:border-opacity-50">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3 text-green-neon">Contract Negotiation</h3>
+                    <div class="service-details text-gray-300 text-center">
+                        <p>We handle negotiations with professionalism and legal precision, ensuring our clients receive fair compensation and favorable terms.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-blue-light/20 rounded-lg p-8 shadow-md border border-opacity-10 border-green-neon hover:border-opacity-50">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3 text-green-neon">Marketing & Branding</h3>
+                    <div class="service-details text-gray-300 text-center">
+                        <p>Build a strong image across media, sponsorships, and social platforms to maximize your off-field potential and long-term value.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-blue-light/20 rounded-lg p-8 shadow-md border border-opacity-10 border-green-neon hover:border-opacity-50">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3 text-green-neon">Global Transfer Consulting</h3>
+                    <div class="service-details text-gray-300 text-center">
+                        <p>We connect players with clubs in Europe, North Africa, Turkey, China, and the Gulf region, focusing on career development and strategic moves.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-blue-light/20 rounded-lg p-8 shadow-md border border-opacity-10 border-green-neon hover:border-opacity-50">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3 text-green-neon">Personal Support</h3>
+                    <div class="service-details text-gray-300 text-center">
+                        <p>Beyond business, we provide personal support to help players navigate challenges and transitions throughout their careers across different cultures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-16 px-6 md:px-12 bg-navy-dark relative">
+        <div class="football-field absolute inset-0"></div>
+        <div class="container mx-auto text-center relative z-10">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-white">Ready to Take Your Career to the Next Level?</h2>
+                <p class="text-lg mb-8 text-gray-300">Join our global network of sports professionals and discover new opportunities worldwide.</p>
+                <button class="bg-green-neon hover:bg-green-light text-navy font-bold py-3 px-10 rounded-lg shadow-lg transition duration-300 uppercase tracking-wider mb-8" style="text-shadow: none; box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);">Contact Us</button>
+                
+                <!-- Email -->
+                <div class="flex justify-center items-center gap-2 mb-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-neon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span class="text-gray-300">fifaagent@m-transpro.com</span>
+                </div>
+                
+                <!-- Social Media Icons -->
+                <div class="flex justify-center space-x-6 mt-6">
+                    <a href="https://www.facebook.com/share/1An1Y7kd2p/" target="_blank" class="social-icon text-white hover:text-green-neon transition duration-300">
+                        <i class="fab fa-facebook-f text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/m_trans_pro?igsh=MWdyeG9udjlmOG1wYQ==" target="_blank" class="social-icon text-white hover:text-green-neon transition duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://wa.me/213775329532" class="social-icon text-white hover:text-green-neon transition duration-300">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-dark text-white py-12 px-6 md:px-12">
+        <div class="container mx-auto">
+            <div class="flex flex-col items-center justify-center">
+                <div class="fifa-badge px-6 py-2 rounded inline-block mb-6 text-sm md:text-base">
+                    <span class="text-white">FIFA</span> 
+                    <span class="text-green-neon mx-1">LICENSED</span> 
+                    <span class="text-white">AGENT</span>
+                </div>
+                
+                <div class="text-sm text-gray-400 text-center mb-6">
+                    © 2023 MTRANSPRO. All rights reserved.
+                </div>
+                
+                <div class="flex justify-end w-full">
+                    <button id="privacyPolicyBtn" class="text-green-neon hover:text-green-light underline transition duration-300">
+                        View Privacy Policy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="privacy-modal">
+        <div class="privacy-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-green-neon">Privacy Policy</h2>
+                <button id="closePrivacyBtn" class="text-white hover:text-green-neon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="text-gray-300 space-y-4">
+                <p>Last updated: January 1, 2023</p>
+                
+                <h3 class="text-xl font-bold text-white mt-6">1. Introduction</h3>
+                <p>MTRANSPRO ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website www.m-transpro.com.</p>
+                
+                <h3 class="text-xl font-bold text-white mt-6">2. Information We Collect</h3>
+                <p>We may collect information about you in a variety of ways. The information we may collect includes:</p>
+                <ul class="list-disc pl-6 mt-2">
+                    <li>Personal Data: Personally identifiable information, such as your name, email address, and telephone number, that you voluntarily give to us when you choose to participate in various activities related to our website.</li>
+                    <li>Derivative Data: Information our servers automatically collect when you access our website, such as your IP address, browser type, operating system, access times, and the pages you have viewed directly before and after accessing the website.</li>
+                    <li>Financial Data: Financial information, such as data related to your payment method (e.g., valid credit card number, card brand, expiration date) that we may collect when you purchase services from us.</li>
+                </ul>
+                
+                <h3 class="text-xl font-bold text-white mt-6">3. Use of Your Information</h3>
+                <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the website to:</p>
+                <ul class="list-disc pl-6 mt-2">
+                    <li>Create and manage your account.</li>
+                    <li>Process transactions.</li>
+                    <li>Send you emails regarding your account or services.</li>
+                    <li>Compile anonymous statistical data and analysis for use internally or with third parties.</li>
+                    <li>Deliver targeted advertising, newsletters, and other information regarding promotions and the website to you.</li>
+                    <li>Monitor and analyze usage and trends to improve your experience with the website.</li>
+                </ul>
+                
+                <h3 class="text-xl font-bold text-white mt-6">4. Disclosure of Your Information</h3>
+                <p>We may share information we have collected about you in certain situations. Your information may be disclosed as follows:</p>
+                <ul class="list-disc pl-6 mt-2">
+                    <li>By Law or to Protect Rights: If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation.</li>
+                    <li>Third-Party Service Providers: We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.</li>
+                    <li>Marketing Communications: With your consent, or with an opportunity for you to withdraw consent, we may share your information with third parties for marketing purposes.</li>
+                </ul>
+                
+                <h3 class="text-xl font-bold text-white mt-6">5. Security of Your Information</h3>
+                <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.</p>
+                
+                <h3 class="text-xl font-bold text-white mt-6">6. Contact Us</h3>
+                <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
+                <p class="mt-2">MTRANSPRO<br>Email: fifaagent@m-transpro.com<br>Website: www.m-transpro.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Control
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenuLinks = document.querySelectorAll('#mobileMenu a');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Service cards click to show details
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('active');
+            });
+        });
+        
+        // Region buttons functionality
+        const regionButtons = document.querySelectorAll('.region-button');
+        const regionContents = document.querySelectorAll('.region-content');
+        const regionDetailsPanel = document.getElementById('regionDetails');
+        let activeRegion = null;
+        
+        function toggleRegionContent(regionId) {
+            // If clicking the same region that's already active
+            if (activeRegion === regionId) {
+                // Hide the region details panel
+                regionDetailsPanel.classList.add('hidden');
+                
+                // Remove active class from all buttons
+                regionButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Reset active region
+                activeRegion = null;
+                return;
+            }
+            
+            // Show the region details panel
+            regionDetailsPanel.classList.remove('hidden');
+            
+            // Hide all region contents
+            regionContents.forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all buttons
+            regionButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected region content
+            document.getElementById(regionId + 'Details').classList.remove('hidden');
+            
+            // Add active class to clicked button
+            document.getElementById(regionId + 'Btn').classList.add('active');
+            
+            // Update active region
+            activeRegion = regionId;
+        }
+        
+        // Add click event listeners to region buttons
+        document.getElementById('algeriaBtn').addEventListener('click', () => toggleRegionContent('algeria'));
+        document.getElementById('africaBtn').addEventListener('click', () => toggleRegionContent('africa'));
+        document.getElementById('europeBtn').addEventListener('click', () => toggleRegionContent('europe'));
+        document.getElementById('asiaBtn').addEventListener('click', () => toggleRegionContent('asia'));
+        
+        // Add animation to service cards on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.service-card, .region-button').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(card);
+        });
+        
+        // Animate football field background
+        const footballFields = document.querySelectorAll('.football-field');
+        let opacity = 0.1;
+        let direction = 0.0005;
+        
+        function animateFields() {
+            opacity += direction;
+            if (opacity >= 0.2 || opacity <= 0.1) {
+                direction *= -1;
+            }
+            
+            footballFields.forEach(field => {
+                field.style.opacity = opacity;
+            });
+            
+            requestAnimationFrame(animateFields);
+        }
+        
+        animateFields();
+        
+        // Privacy Policy Modal
+        const privacyModal = document.getElementById('privacyModal');
+        const privacyPolicyBtn = document.getElementById('privacyPolicyBtn');
+        const closePrivacyBtn = document.getElementById('closePrivacyBtn');
+        
+        privacyPolicyBtn.addEventListener('click', () => {
+            privacyModal.style.display = 'block';
+        });
+        
+        closePrivacyBtn.addEventListener('click', () => {
+            privacyModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === privacyModal) {
+                privacyModal.style.display = 'none';
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9629b457234a2820',t:'MTc1MzA5MDQ4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
