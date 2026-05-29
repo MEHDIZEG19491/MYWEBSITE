@@ -895,7 +895,7 @@
 <input type="hidden" name="_subject" value="New MTRANSPRO website inquiry"/>
 <input type="hidden" name="_template" value="table"/>
 <input type="hidden" name="_captcha" value="false"/>
-<input type="hidden" name="_next" value="https://www.m-transpro.com/#contact"/>
+<input type="hidden" name="_next" value="https://www.m-transpro.com/?sent=1#contact"/>
 <div>
 <label class="block text-sm font-medium text-gray-200 mb-2" for="name">Full Name</label>
 <input autocomplete="name" class="w-full rounded-xl bg-navy-dark/70 border border-white/10 px-4 py-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-neon/30 focus:border-green-neon/40" id="name" name="name" placeholder="Your name" required=""/>
@@ -924,9 +924,16 @@
 </div>
 </div>
 <div class="md:col-span-2 flex flex-col items-center justify-center gap-5 pt-4">
-<button class="inline-flex items-center justify-center rounded-xl bg-green-neon text-navy font-bold px-6 py-3 hover:brightness-110 transition" type="submit">
-              Send Message & PDF
+<button id="contactSubmitBtn" class="inline-flex items-center justify-center rounded-xl bg-green-neon text-navy font-bold px-6 py-3 hover:brightness-110 transition" type="submit">
+              Send Message
             </button>
+<div id="sendSuccess" class="hidden w-full max-w-md rounded-xl border border-emerald-400/40 bg-emerald-500/10 px-4 py-3 text-emerald-300 text-sm font-semibold text-center">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-white mr-2">✓</span>
+Message sent successfully.
+</div>
+<div id="sendPending" class="hidden w-full max-w-md rounded-xl border border-yellow-400/30 bg-yellow-500/10 px-4 py-3 text-yellow-200 text-sm text-center">
+Sending...
+</div>
 <div class="flex items-center gap-3 justify-center w-full">
 <a aria-label="WhatsApp" class="inline-flex items-center justify-center w-11 h-11 rounded-xl border border-white/10 bg-navy-dark/60 hover:border-green-neon/40 hover:bg-navy-dark transition" href="https://api.whatsapp.com/send/?phone=213775329532&amp;text&amp;type=phone_number&amp;app_absent=0" rel="noopener" target="_blank">
 <svg class="text-green-neon" fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg">
@@ -939,9 +946,12 @@
 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
 </svg>
-</a><a aria-label="Email" class="inline-flex items-center justify-center w-11 h-11 rounded-xl border border-white/10 bg-navy-dark/60 hover:border-green-neon/40 hover:bg-navy-dark transition" href="mailto:fifaagent@m-transpro.com" rel="noopener"><svg class="text-green-neon" fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg">
+</a><div class="relative flex items-center gap-2">
+<a id="emailIcon" aria-label="Email" class="inline-flex items-center justify-center w-11 h-11 rounded-xl border border-white/10 bg-navy-dark/60 hover:border-green-neon/40 hover:bg-navy-dark transition" href="mailto:fifaagent@m-transpro.com" rel="noopener"><svg class="text-green-neon" fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114V5.383zM14.247 12.44 9.16 9.387 8 10.083 6.84 9.387 1.753 12.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .247-.56zM1 11.114l4.758-2.876L1 5.383v5.731z"></path>
 </svg></a>
+<a id="emailText" class="hidden rounded-xl border border-green-neon/30 bg-navy-dark/90 px-3 py-2 text-xs sm:text-sm text-green-neon font-semibold whitespace-nowrap" href="mailto:fifaagent@m-transpro.com">fifaagent@m-transpro.com</a>
+</div>
 </div>
 </div>
 </form>
@@ -1153,6 +1163,40 @@ document.addEventListener('DOMContentLoaded', function () {
   // Default to English
   showLang('en');
 });
+</script>
+
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const successBox = document.getElementById('sendSuccess');
+  const pendingBox = document.getElementById('sendPending');
+  const form = document.querySelector('form[action*="formsubmit.co"]');
+  const submitBtn = document.getElementById('contactSubmitBtn');
+  if (params.get('sent') === '1' && successBox) {
+    successBox.classList.remove('hidden');
+    pendingBox && pendingBox.classList.add('hidden');
+    setTimeout(function () { successBox.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 350);
+  }
+  if (form) {
+    form.addEventListener('submit', function () {
+      if (pendingBox) pendingBox.classList.remove('hidden');
+      if (successBox) successBox.classList.add('hidden');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.classList.add('opacity-80', 'cursor-wait');
+      }
+    });
+  }
+  const emailIcon = document.getElementById('emailIcon');
+  const emailText = document.getElementById('emailText');
+  if (emailIcon && emailText) {
+    emailIcon.addEventListener('click', function (event) {
+      event.preventDefault();
+      emailText.classList.toggle('hidden');
+    });
+  }
+})();
 </script>
 </body>
 </html>
